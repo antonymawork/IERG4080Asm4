@@ -3,7 +3,7 @@ import json
 import redis
 
 # Create Redis connection
-REDIS_HOST = 'your-redis-instance-private-ip-or-public-dns'
+REDIS_HOST = 'ec2-52-54-120-151.compute-1.amazonaws.com'
 REDIS_PORT = 6379
 REDIS_DB = 0
 
