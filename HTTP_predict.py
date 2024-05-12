@@ -6,7 +6,11 @@ import requests
 from bs4 import BeautifulSoup
 from newspaper import Article
 
-r = redis.Redis()
+REDIS_HOST = 'your-redis-instance-private-ip-or-public-dns'
+REDIS_PORT = 6379
+REDIS_DB = 0
+
+r = redis.Redis(host=REDIS_HOST, port=REDIS_PORT, db=REDIS_DB)
 
 tokenizer = AutoTokenizer.from_pretrained("AyoubChLin/Bart-MNLI-CNN_news")
 model = AutoModelForSequenceClassification.from_pretrained("AyoubChLin/Bart-MNLI-CNN_news")
