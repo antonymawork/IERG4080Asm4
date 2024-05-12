@@ -3,11 +3,18 @@ import json
 import redis
 
 # Create Redis connection
-REDIS_HOST = 'ec2-52-54-120-151.compute-1.amazonaws.com'
+REDIS_HOST = '52.72.49.114'
 REDIS_PORT = 6379
 REDIS_DB = 0
 
-r = redis.Redis(host=REDIS_HOST, port=REDIS_PORT, db=REDIS_DB)
+r = redis.Redis(host=REDIS_HOST, 
+            port=REDIS_PORT, 
+            db=REDIS_DB, 
+            password=4080, 
+            health_check_interval=10,
+            socket_timeout=10, socket_keepalive=True,
+            socket_connect_timeout=10, retry_on_timeout=True
+            )
 
 def listen_predictions():
     """Continuously listen for and process prediction tasks, printing detailed results."""
