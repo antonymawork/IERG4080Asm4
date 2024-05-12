@@ -8,7 +8,11 @@ from datetime import datetime
 app = Flask(__name__)
 
 # Create Redis connection
-r = redis.Redis()
+REDIS_HOST = 'your-redis-instance-private-ip-or-public-dns'
+REDIS_PORT = 6379
+REDIS_DB = 0
+
+r = redis.Redis(host=REDIS_HOST, port=REDIS_PORT, db=REDIS_DB)
 
 @app.route('/')
 def index():
