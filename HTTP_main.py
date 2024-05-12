@@ -12,14 +12,14 @@ r = redis.Redis(host=REDIS_HOST, port=REDIS_PORT, db=REDIS_DB)
 def listen_predictions():
     """Continuously listen for and process prediction tasks, printing detailed results."""
     while True:
-        _, message = redis_connection.blpop("prediction")
+        _, message = r.blpop("prediction")
         print(f"Received message from Redis: {message}")
         task = json.loads(message)
         print(f"Received task: {task}")
         task_id = task.get("task_id")
         redis_key = f"result:{task_id}"
         redis_value = json.dumps(task)
-        redis_connection.set(redis_key, redis_value)
+        r.set(redis_key, redis_value)
         
         # Handle the prediction results
         predictions = task['predictions']
