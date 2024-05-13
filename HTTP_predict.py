@@ -25,7 +25,7 @@ classifier = pipeline(
     "zero-shot-classification",
     model=model,
     tokenizer=tokenizer,
-    device=0
+    device=-1
 )
 
 def extract_text_from_url(url, max_retries=5):
