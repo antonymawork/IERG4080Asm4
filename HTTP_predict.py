@@ -15,8 +15,8 @@ r = redis.Redis(host=REDIS_HOST,
             db=REDIS_DB, 
             password=4080, 
             health_check_interval=10,
-            socket_timeout=10, socket_keepalive=True,
-            socket_connect_timeout=10, retry_on_timeout=True
+            socket_timeout=1000, socket_keepalive=True,
+            socket_connect_timeout=1000, retry_on_timeout=True
             )
 
 tokenizer = AutoTokenizer.from_pretrained("AyoubChLin/Bart-MNLI-CNN_news")
