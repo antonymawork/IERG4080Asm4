@@ -18,7 +18,7 @@ To run the application on your local machine, follow these steps:
 
 3. **Install Required Python Packages**:
    ```bash
-   pip install redis transformers requests torch newspaper3k bs4 lxml_html_clean
+   pip install flask redis transformers requests torch newspaper3k bs4 lxml_html_clean
    ```
 
 4. **Run the Application**:
