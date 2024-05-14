@@ -8,8 +8,8 @@ This repository contains code for classifying news articles into various topics 
 To run the application on your local machine, follow these steps:
 
 1. **Download the Required Files**:
-   - `predictionWorker_local.py`
-   - `resultProcessor_local.py`
+   - `HTTP_predictionWorker_local.py`
+   - `HTTP_resultProcessor_local.py`
    - `server_local.py`
 
 2. **Install Redis**:
@@ -25,11 +25,11 @@ To run the application on your local machine, follow these steps:
    - Open three separate terminals:
      - In the first terminal, run:
        ```bash
-       python predictionWorker_local.py
+       python HTTP_predictionWorker_local.py
        ```
      - In the second terminal, run:
        ```bash
-       python resultProcessor_local.py
+       python HTTP_resultProcessor_local.py
        ```
      - In the third terminal, run:
        ```bash
@@ -78,7 +78,7 @@ To run the application on AWS, follow these steps:
    - Update `HTTP_predict.py` with your Redis instance's Elastic IP.
    - Run the prediction worker:
      ```bash
-     python3 HTTP_predict.py
+     python3 HTTP_predictionWorker.py
      ```
 
 4. **Result Processor Instance**:
@@ -95,7 +95,7 @@ To run the application on AWS, follow these steps:
    - Update `HTTP_main.py` with your Redis instance's Elastic IP.
    - Run the result processor:
      ```bash
-     python3 HTTP_main.py
+     python3 HTTP_resultProcessor.py
      ```
 
 5. **Web Server Instance**:
