@@ -1,4 +1,4 @@
-```markdown
+
 # News Classification with Machine Learning
 
 This repository contains code for classifying news articles into various topics using machine learning. The project supports execution both locally and on AWS instances.
